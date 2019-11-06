@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="icon" href="./c4.jpg">
+
+
+
+<style>
+body{
+color:orange;
+font-family: :Arial, Helvetica, sans-serif;
+max-width:650px;
+margin:0 auto;
+padding: 0 16px;
+background-image:url("C:\Users\sonali.jagtap\Desktop\node_course\node-app\webserver\public\img\c4.jpg")
+
+}
+footer
+{
+background-color: greenyellow;
+padding: 10px;
+margin:16px;
+border-top: 1px solid rgb(226, 43, 144)
+
+}
+header{
+margin-top:16px;
+margin-bottom: 48px;
+
+
+}
+h1{
+font-size:48px;
+}
+header a{
+color:burlywood;
+margin-right:16px;
+text-decoration: none;
+
+
+
+}
+</style>
+</head>     
+<body>
+<div class="main-content">
+<h1>Welcome to Homepage of HBS!!!</h1>
+{{>header}}
+
+<form>
+
+
+
+
+    <input placeholder="location">
+    <button>Search
+        </button>
+        <p id='msg1'></p>
+
+
+
+        
+    </form>
+
+
+
+
+
+
+
+<h1>{{name}} </h1>
+{{!-- <h2>Temperaure:{{Temp}}</h2> --}}
+</div>
+{{>footer}}
+<script>console.log('Javascipt running')
+fetch('http://puzzle.mead.io/puzzle').then((res)=>
+{
+res.json().then((data)=>{
+
+
+  console.log(data)
+})
+
+})
+const weatherform=document.querySelector('form')
+const search=document.querySelector('input')
+const msg=document.querySelector('#msg1')
+msg.textContent=' Message'
+weatherform.addEventListener('submit',(e)=>{
+  e.preventDefault()
+console.log('testing')
+console.log(search.value)
+
+})
+
+
+</script>
+</body>
+</html>
